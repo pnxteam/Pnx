@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PNX TEAM | Social Media Recovery</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#050505;
+  color:#fff;
+}
+a{text-decoration:none;color:inherit}
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:999;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,115,0,.25);
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:900;
+  font-size:22px;
+}
+.logo-badge{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff4b00,#ff9d00);
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  box-shadow:0 0 25px rgba(255,100,0,.6);
+}
+nav{
+  display:flex;
+  gap:22px;
+  font-weight:bold;
+  font-size:14px;
+}
+nav a:hover{color:#ff7300}
+.hero{
+  min-height:100vh;
+  padding:130px 6% 70px;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at 85% 25%,rgba(255,90,0,.75),transparent 28%),
+    radial-gradient(circle at 95% 70%,rgba(255,130,0,.35),transparent 32%),
+    linear-gradient(90deg,#050505 0%,#070707 55%,#2b0b00 100%);
+}
+.hero-content{max-width:900px}
+.label{
+  color:#ff7300;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+h1{
+  font-size:clamp(48px,9vw,105px);
+  line-height:.95;
+  text-transform:uppercase;
+  letter-spacing:-3px;
+}
+h1 span{
+  color:#ff7300;
+  text-shadow:0 0 35px rgba(255,110,0,.65);
+}
+.hero p{
+  margin-top:28px;
+  max-width:720px;
+  color:#d0d0d0;
+  font-size:20px;
+  line-height:1.7;
+}
+.buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+.btn{
+  padding:16px 22px;
+  border-radius:50px;
+  font-weight:900;
+  display:inline-block;
+}
+.primary{
+  background:linear-gradient(135deg,#ff3d00,#ff9d00);
+  color:#050505;
+  box-shadow:0 0 35px rgba(255,110,0,.5);
+}
+.secondary{
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.07);
+}
+section{padding:90px 6%}
+.section-title{
+  max-width:850px;
+  margin-bottom:40px;
+}
+.section-title small{
+  color:#ff7300;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+h2{
+  margin-top:12px;
+  font-size:clamp(34px,6vw,68px);
+  line-height:1.05;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:24px;
+  padding:30px;
+  min-height:230px;
+}
+.card:hover{
+  border-color:#ff7300;
+  transform:translateY(-5px);
+  transition:.25s;
+}
+.num{
+  color:#ff7300;
+  font-weight:900;
+  margin-bottom:25px;
+}
+.card h3{
+  font-size:24px;
+  margin-bottom:14px;
+}
+.card p{
+  color:#cfcfcf;
+  line-height:1.7;
+}
+.about{
+  background:#080808;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+}
+.about p{
+  color:#d0d0d0;
+  line-height:1.8;
+  font-size:18px;
+}
+.about-box{
+  border-left:4px solid #ff7300;
+  padding-left:24px;
+}
+.list{margin-top:25px;display:grid;gap:14px}
+.list div{
+  background:rgba(255,255,255,.06);
+  padding:16px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.08);
+}
+.process{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.step{
+  background:#0c0c0c;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:22px;
+  padding:26px;
+}
+.step b{
+  color:#ff7300;
+  font-size:30px;
+}
+.step h3{margin:16px 0 10px}
+.step p{color:#cfcfcf;line-height:1.6}
+.platforms{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.platforms span{
+  padding:14px 18px;
+  border-radius:50px;
+  background:rgba(255,115,0,.12);
+  border:1px solid rgba(255,115,0,.35);
+  font-weight:900;
+}
+.contact{
+  text-align:center;
+  background:
+    radial-gradient(circle at center top,rgba(255,115,0,.28),transparent 35%),
+    #070707;
+}
+.contact p{
+  color:#cfcfcf;
+  max-width:700px;
+  margin:16px auto 30px;
+  line-height:1.7;
+  font-size:18px;
+}
+.float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:62px;
+  height:62px;
+  background:linear-gradient(135deg,#ff3d00,#ff9d00);
+  color:#000;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:25px;
+  box-shadow:0 0 35px rgba(255,115,0,.65);
+  z-index:999;
+}
+footer{
+  padding:28px 6%;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  color:#aaa;
+  background:#030303;
+}
+@media(max-width:850px){
+  nav{display:none}
+  header{padding:14px 5%}
+  .hero{padding:110px 5% 60px}
+  .grid,.about,.process{grid-template-columns:1fr}
+  h1{letter-spacing:-1.5px}
+  .hero p{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo">
+    <div class="logo-badge">P</div>
+    <span>PNX TEAM</span>
+  </a>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="label">Professional Social Media Recovery Services</div>
+    <h1>Recover Your Disabled Social Media Account <span>Fast & Safely</span></h1>
+    <p>PNX Team helps creators, brands, and businesses recover disabled, hacked, restricted, suspended, or banned social media accounts through a secure step-by-step process.</p>
+    <div class="buttons">
+      <a class="btn primary" href="https://wa.me/4915146377163">Start on WhatsApp</a>
+      <a class="btn secondary" href="https://instagram.com/pnxmm">Instagram @pnxmm</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-title">
+    <small>Our Services</small>
+    <h2>Account Recovery Solutions</h2>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="num">01</div>
+      <h3>Disabled Accounts</h3>
+      <p>Support for accounts disabled because of policy flags, unusual activity, identity checks, or review issues.</p>
+    </div>
+    <div class="card">
+      <div class="num">02</div>
+      <h3>Hacked Accounts</h3>
+      <p>Guidance for compromised accounts, changed emails, suspicious logins, and lost access situations.</p>
+    </div>
+    <div class="card">
+      <div class="num">03</div>
+      <h3>Restricted Pages</h3>
+      <p>Help with page restrictions, business accounts, creator profiles, bans, and platform access problems.</p>
+    </div>
+    <div class="card">
+      <div class="num">04</div>
+      <h3>Appeal Preparation</h3>
+      <p>We help organize the correct details and recovery route before submitting platform requests.</p>
+    </div>
+    <div class="card">
+      <div class="num">05</div>
+      <h3>Creators & Brands</h3>
+      <p>Support for influencers, businesses, agencies, shops, artists, and pages that depend on social media.</p>
+    </div>
+    <div class="card">
+      <div class="num">06</div>
+      <h3>Security Guidance</h3>
+      <p>Steps to protect your recovered account, reduce risk, and secure future logins.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="section-title">
+    <small>About PNX Team</small>
+    <h2>Trusted Support For Social Media Account Recovery</h2>
+  </div>
+  <div class="about-box">
+    <p>PNX Team focuses on helping individuals and businesses restore access to important accounts. Every case is reviewed carefully so the recovery process is clear, secure, and professional.</p>
+    <div class="list">
+      <div>Professional recovery support</div>
+      <div>Experience with platform policies</div>
+      <div>Transparent step-by-step process</div>
+      <div>Support for creators, brands, and businesses</div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="section-title">
+    <small>How It Works</small>
+    <h2>Simple Recovery Process</h2>
+  </div>
+  <div class="process">
+    <div class="step"><b>01</b><h3>Contact</h3><p>Send us your issue on WhatsApp or Instagram.</p></div>
+    <div class="step"><b>02</b><h3>Review</h3><p>We check what happened and what route fits best.</p></div>
+    <div class="step"><b>03</b><h3>Prepare</h3><p>We guide you with the right information.</p></div>
+    <div class="step"><b>04</b><h3>Recover</h3><p>We support you through the recovery process.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <small>Platforms</small>
+    <h2>We Work With Major Platforms</h2>
+  </div>
+  <div class="platforms">
+    <span>Instagram</span>
+    <span>Facebook</span>
+    <span>TikTok</span>
+    <span>YouTube</span>
+    <span>X / Twitter</span>
+    <span>Snapchat</span>
+    <span>Business Pages</span>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Need Your Account Back?</h2>
+  <p>Contact PNX Team now. Send your platform, username, and what happened to your account.</p>
+  <div class="buttons" style="justify-content:center">
+    <a class="btn primary" href="https://wa.me/4915146377163">WhatsApp: +49 1514 6377163</a>
+    <a class="btn secondary" href="https://instagram.com/pnxmm">Instagram @pnxmm</a>
+  </div>
+</section>
+
+<a class="float" href="https://wa.me/4915146377163">✆</a>
+
+<footer>
+  <div>© 2026 PNX TEAM</div>
+  <div>Recover • Restore • Reconnect</div>
+</footer>
+
+</body>
+</html>
